@@ -12,22 +12,22 @@
           }
       </style>
   </head>
-  <body>	
-		
+  <body>
+
 	<div class="navbar">
 	  <div class="navbar-inner">
 	    <div class="container-fluid">
 			<ul class="nav">
 			  <li class="style1">
-			    <a href="#"><strong>MQ -Race&nbsp;&nbsp; Fast Fingers&nbsp;&nbsp;&nbsp;&nbsp; </strong> <span id="socketio"></span></a> 
+			    <a href="#"><strong>MQ -Race&nbsp;&nbsp; Fast Fingers&nbsp;&nbsp;&nbsp;&nbsp; </strong> <span id="socketio"></span></a>
 			  </li>
 			</ul>
 	    </div>
 	  </div>
 	</div>
 
-    <div class="container-fluid">	
-	
+    <div class="container-fluid">
+
 	<%- body %>
 
 	<footer>
@@ -37,13 +37,13 @@
 	var user_id = Math.random();
 	var real_time_server = {host: '<%=real_time_server.host %>', port:<%=real_time_server.port %>};
 	</script>
-	<script src="http://<%=real_time_server.host %>:<%=real_time_server.port %>/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>		
+	<script src="http://<%=real_time_server.host %>:<%=real_time_server.port %>/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 
 	<script src="/javascripts/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/knockout-2.0.0.js" type="text/javascript" charset="utf-8"></script>
 	</div>
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-300651-38']);
 	  _gaq.push(['_trackPageview']);
@@ -53,6 +53,6 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-	</script>
+	</script> -->
   </body>
 </html>

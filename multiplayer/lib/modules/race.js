@@ -78,7 +78,7 @@ function createRace(server){
 		util.sort(hall_of_fame, 'score', true);
 		console.log("jgdsjfhgdsjgfk",hall_of_fame[0].score,",,,,,,,,,,,"+typeof hall_of_fame[0].score.toString());
 		// var html = fs.writeFileSync("d://myFile.txt","{playerId:"+hall_of_fame[0].player+",score:"+hall_of_fame[0].score.toString()+",time:"+hall_of_fame[0].timestamp+"}");
-		var html = fs.appendFile("d://myFile.txt","{playerId:"+hall_of_fame[0].player+",score:"+hall_of_fame[0].score.toString()+",time:"+hall_of_fame[0].timestamp+"}");
+		var html = fs.appendFile("./data.json","{\"playerId\":"+hall_of_fame[0].player+",\"score\":"+hall_of_fame[0].score.toString()+",\"time\":"+hall_of_fame[0].timestamp+"},");
 
 	// fs.writeFile()
 		//and slice array!
