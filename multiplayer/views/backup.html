@@ -110,7 +110,7 @@
             self.time = ko.observableArray();
 
             self.valid_name = ko.computed(function () {
-                return (self.name() && self.name().length > 6);
+                return (self.name() && self.name().length > 2);
             }, self);
 
             self.sendOperationResult = function () {
@@ -498,35 +498,47 @@ $("#CID4").text(choices[count][3]);
 
 </script>
 
-<div class="alert alert-warning" data-bind="visible: (!valid_name())" style="margin-top:20%">
-  <p style="font-size:47px;line-height: 50px !important;">Be the fastest...!! Test your Agile knowledge in 180 Seconds</p>
-  <p style="font-size:34px;line-height: 35px !important;">Play against other players in real time! (or try to beat the top scores!)</p>
-  <p style="font-size:34px;line-height: 35px !important;">Please introduce your name to start playing!</p>
+<div class="alert alert-warning" data-bind="visible: (!valid_name())" style="margin-top:30%">
+  <h2>Be the fastest...!! Test your Agile knowledge in 180 Seconds</h2>
+  <h3>Play against other players in real time! (or try to beat the top scores!)</h3>
+  <p>Please introduce your name to start playing!</p>
 </div>
 
-<p style="font-size:50px;color:black;margin-top:5%;">Your name: <input maxlength="25%" type="text" id="name" name="name" value="" data-bind="value: name, valueUpdate: 'afterkeydown'" /></p>
+<p>Your name: <input maxlength="25" type="text" id="name" name="name" value="" data-bind="value: name, valueUpdate: 'afterkeydown'" /></p>
 
-<div style="display:none;margin-top:5%;color:black;" data-bind="visible: valid_name">
+<div style="display:none" data-bind="visible: valid_name">
   <div class="row-fluid">
-      <table align="center" style="width: 90%; height:120px;margin-left:10%;"><tr><td align="left" >
-        <span id="QID" class="style1">Question<br /></span> &nbsp;</td></tr></table>
-    <table align="center" style="width: 652px; height: 202px;margin-top:3%;">
+<!--<div class="span12 main">
+        <span id="operations"></span>
+        <span class="equal">=</span>-->
+    <!--    <center>
+<table>
+	<tr><td align="left"><span id="QID">Question</span> </td></tr>
+	<tr><td align="left" ><input type="radio" value="1" name="ANS" id="ans1"><span id="CID1">C1</span></td></tr>
+	<tr><td align="left"><input type="radio" value="2" name="ANS" id="ans2"><span id="CID2">C2</span></td></tr>
+	<tr><td align="left"><input type="radio" value="3" name="ANS" id="ans3"><span id="CID3">C3</span></td></tr>
+	<tr><td align="left"><input type="radio" value="4" name="ANS" id="ans4"><span id="CID4">C4</span></td></tr>
+</table>
+
+
+</center>-->
+      <table align="center" style="width: 652px; height:120px"><tr><td align="left" ><span id="QID" class="style1">Question<br /></span> &nbsp;</td></tr></table>
+    <table align="center" style="width: 652px; height: 202px">
 
 	<tr><td align="left" class="style3"><input type="radio" accesskey="1" value="1" name="ANS" id="ans1"  style="width:3em; height:3em;"></td><td align="left" >
-            <label for="ans1" style="cursor:pointer;margin-left:4%;"><span id="CID1" class="style2">C1</span></label></td></tr>
+            <label for="ans1" style="cursor:pointer;"><span id="CID1" class="style2">C1</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="2" value="2" name="ANS"  id="ans2"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans2" style="cursor:pointer;margin-left:4%;"><span id="CID2" class="style2">C2</span></label></td></tr>
+            <label for="ans2" style="cursor:pointer;"><span id="CID2" class="style2">C2</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="3" value="3" name="ANS"   id="ans3"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans3" style="cursor:pointer;margin-left:4%;"><span id="CID3" class="style2">C3</span></label></td></tr>
+            <label for="ans3" style="cursor:pointer;"><span id="CID3" class="style2">C3</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="4" value="4" name="ANS"   id="ans4"   style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans4" style="cursor:pointer;margin-left:4%;"><span id="CID4" class="style2">C4</span></label></td></tr>
+            <label for="ans4" style="cursor:pointer;"><span id="CID4" class="style2">C4</span></label></td></tr>
 </table>
         <!-- <input class="input_player" maxlength="4" type="text" name="player1" value="" data-bind="value: input_player1, valueUpdate: 'afterkeydown'" />  -->
         <div id="msg"></div>
     </div>
   </div>
 
-<!-- <div style="display:none;margin-top:0%;" data-bind="visible: valid_name">
   <div class="row-fluid results">
     <div class="span4 current_game">
       <h3>Current game
@@ -541,6 +553,7 @@ $("#CID4").text(choices[count][3]);
         </ol>
         <p data-bind="visible: (scores().length==0)">Answer the questions and be the first one to score!</p>
       </div>
+
     </div>
 
     <div class="span4">
@@ -571,5 +584,4 @@ $("#CID4").text(choices[count][3]);
         </ol>
     </div>
   </div>
-</div> -->
 </div>

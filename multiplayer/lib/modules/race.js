@@ -1,8 +1,6 @@
 var config = require("../../config").values
 var util = require("./util")
 var fs = require("fs");
-// var txtFile = "d:/test.txt";
-// var file = new File(txtFile);
 
 function Operation (counts) {
 var self = this;
@@ -50,8 +48,6 @@ answers[37] = 1;
 answers[38] = 2;
 answers[39] = 3;
 answers[40] = 4;
-
-
 
 	self.solution = answers[counts];
 }

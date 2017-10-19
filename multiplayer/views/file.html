@@ -498,36 +498,10 @@ $("#CID4").text(choices[count][3]);
 
 </script>
 
-<div class="alert alert-warning" data-bind="visible: (!valid_name())" style="margin-top:20%">
-  <p style="font-size:47px;line-height: 50px !important;">Be the fastest...!! Test your Agile knowledge in 180 Seconds</p>
-  <p style="font-size:34px;line-height: 35px !important;">Play against other players in real time! (or try to beat the top scores!)</p>
-  <p style="font-size:34px;line-height: 35px !important;">Please introduce your name to start playing!</p>
-</div>
-
-<p style="font-size:50px;color:black;margin-top:5%;">Your name: <input maxlength="25%" type="text" id="name" name="name" value="" data-bind="value: name, valueUpdate: 'afterkeydown'" /></p>
-
-<div style="display:none;margin-top:5%;color:black;" data-bind="visible: valid_name">
-  <div class="row-fluid">
-      <table align="center" style="width: 90%; height:120px;margin-left:10%;"><tr><td align="left" >
-        <span id="QID" class="style1">Question<br /></span> &nbsp;</td></tr></table>
-    <table align="center" style="width: 652px; height: 202px;margin-top:3%;">
-
-	<tr><td align="left" class="style3"><input type="radio" accesskey="1" value="1" name="ANS" id="ans1"  style="width:3em; height:3em;"></td><td align="left" >
-            <label for="ans1" style="cursor:pointer;margin-left:4%;"><span id="CID1" class="style2">C1</span></label></td></tr>
-	<tr><td align="left" class="style3"><input type="radio" accesskey="2" value="2" name="ANS"  id="ans2"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans2" style="cursor:pointer;margin-left:4%;"><span id="CID2" class="style2">C2</span></label></td></tr>
-	<tr><td align="left" class="style3"><input type="radio" accesskey="3" value="3" name="ANS"   id="ans3"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans3" style="cursor:pointer;margin-left:4%;"><span id="CID3" class="style2">C3</span></label></td></tr>
-	<tr><td align="left" class="style3"><input type="radio" accesskey="4" value="4" name="ANS"   id="ans4"   style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans4" style="cursor:pointer;margin-left:4%;"><span id="CID4" class="style2">C4</span></label></td></tr>
-</table>
-        <!-- <input class="input_player" maxlength="4" type="text" name="player1" value="" data-bind="value: input_player1, valueUpdate: 'afterkeydown'" />  -->
-        <div id="msg"></div>
-    </div>
-  </div>
-
-<!-- <div style="display:none;margin-top:0%;" data-bind="visible: valid_name">
-  <div class="row-fluid results">
+<!-- <p>lhsdksjdfbkjsdbfjs</p> -->
+<!-- <div style="display:none;margin-top:0%;" data-bind="visible: valid_name"> -->
+<div style="margin-left:2%;margin-top:2%;margin-bottom:2%;margin-right:-5%">
+  <div class="row-fluid results" style="margin-top:11%">
     <div class="span4 current_game">
       <h3>Current game
         <small>(ends in <span id="time" data-bind="text: time, css: { red: time() < 10 }"></span> secs)</small>
@@ -548,7 +522,7 @@ $("#CID4").text(choices[count][3]);
       <div data-bind="visible: history().length">
         <div data-bind="foreach: history">
             <div class="game_history alert alert-warning">
-              <h4><small>game played at: </small> <span data-bind="text: name"> </span></h4>
+              <h4><small>Game played at: </small> <span data-bind="text: name"> </span></h4>
               <ol data-bind="foreach: scores">
                 <li><span data-bind="text: player"></span>: <span class="score" data-bind="text: score"></span></li>
               </ol>
@@ -557,7 +531,7 @@ $("#CID4").text(choices[count][3]);
       </div>
     </div>
 
-    <div class="span4 hall_of_fame">
+    <div class="span4 hall_of_fame" style="color:black">
       <h3>Hall of Fame (top scores)</h3>
         <ol data-bind="foreach: hall_of_fame">
               <li>
@@ -571,5 +545,4 @@ $("#CID4").text(choices[count][3]);
         </ol>
     </div>
   </div>
-</div> -->
 </div>

@@ -57,10 +57,7 @@
             if (count == 40) {
                 count = -1
             }
-
             count++;
-
-
         });
 
         socket.on('history', function (history) {
@@ -110,7 +107,7 @@
             self.time = ko.observableArray();
 
             self.valid_name = ko.computed(function () {
-                return (self.name() && self.name().length > 6);
+                return (self.name() && self.name().length > 2);
             }, self);
 
             self.sendOperationResult = function () {
@@ -498,35 +495,33 @@ $("#CID4").text(choices[count][3]);
 
 </script>
 
-<div class="alert alert-warning" data-bind="visible: (!valid_name())" style="margin-top:20%">
-  <p style="font-size:47px;line-height: 50px !important;">Be the fastest...!! Test your Agile knowledge in 180 Seconds</p>
-  <p style="font-size:34px;line-height: 35px !important;">Play against other players in real time! (or try to beat the top scores!)</p>
-  <p style="font-size:34px;line-height: 35px !important;">Please introduce your name to start playing!</p>
+<div class="alert alert-warning" data-bind="visible: (!valid_name())" style="margin-top:25%">
+  <h3 style="margin-top:1%">Be the fastest...!! Test your Agile knowledge in 180 Seconds</h3>
+  <h4>Play against other players in real time! (or try to beat the top scores!)</h4>
+  <p>Please introduce your name to start playing!</p>
 </div>
 
-<p style="font-size:50px;color:black;margin-top:5%;">Your name: <input maxlength="25%" type="text" id="name" name="name" value="" data-bind="value: name, valueUpdate: 'afterkeydown'" /></p>
-
-<div style="display:none;margin-top:5%;color:black;" data-bind="visible: valid_name">
+<p>Your name: <input maxlength="25" type="text" id="name" name="name" value="" data-bind="value: name, valueUpdate: 'afterkeydown'" /></p>
+<!-- <a href="backup.html"><button>proceed</button></a> -->
+<div style="display:none;margin-top:30%" data-bind="visible: valid_name">
   <div class="row-fluid">
-      <table align="center" style="width: 90%; height:120px;margin-left:10%;"><tr><td align="left" >
-        <span id="QID" class="style1">Question<br /></span> &nbsp;</td></tr></table>
-    <table align="center" style="width: 652px; height: 202px;margin-top:3%;">
+      <table align="center" style="width: 652px; height:120px"><tr><td align="left" ><span id="QID" class="style1">Question<br /></span> &nbsp;</td></tr></table>
+    <table align="center" style="width: 652px; height: 202px">
 
 	<tr><td align="left" class="style3"><input type="radio" accesskey="1" value="1" name="ANS" id="ans1"  style="width:3em; height:3em;"></td><td align="left" >
-            <label for="ans1" style="cursor:pointer;margin-left:4%;"><span id="CID1" class="style2">C1</span></label></td></tr>
+            <label for="ans1" style="cursor:pointer;"><span id="CID1" class="style2">C1</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="2" value="2" name="ANS"  id="ans2"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans2" style="cursor:pointer;margin-left:4%;"><span id="CID2" class="style2">C2</span></label></td></tr>
+            <label for="ans2" style="cursor:pointer;"><span id="CID2" class="style2">C2</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="3" value="3" name="ANS"   id="ans3"  style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans3" style="cursor:pointer;margin-left:4%;"><span id="CID3" class="style2">C3</span></label></td></tr>
+            <label for="ans3" style="cursor:pointer;"><span id="CID3" class="style2">C3</span></label></td></tr>
 	<tr><td align="left" class="style3"><input type="radio" accesskey="4" value="4" name="ANS"   id="ans4"   style="width:3em; height:3em;"></td><td align="left">
-            <label for="ans4" style="cursor:pointer;margin-left:4%;"><span id="CID4" class="style2">C4</span></label></td></tr>
+            <label for="ans4" style="cursor:pointer;"><span id="CID4" class="style2">C4</span></label></td></tr>
 </table>
         <!-- <input class="input_player" maxlength="4" type="text" name="player1" value="" data-bind="value: input_player1, valueUpdate: 'afterkeydown'" />  -->
         <div id="msg"></div>
     </div>
   </div>
 
-<!-- <div style="display:none;margin-top:0%;" data-bind="visible: valid_name">
   <div class="row-fluid results">
     <div class="span4 current_game">
       <h3>Current game
@@ -541,6 +536,7 @@ $("#CID4").text(choices[count][3]);
         </ol>
         <p data-bind="visible: (scores().length==0)">Answer the questions and be the first one to score!</p>
       </div>
+
     </div>
 
     <div class="span4">
@@ -571,5 +567,116 @@ $("#CID4").text(choices[count][3]);
         </ol>
     </div>
   </div>
-</div> -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.superhero.min.css' />
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+    <link rel='stylesheet' href='./stylesheets/styles.css' />
+	<script src="/javascripts/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css"> -->
+  <!-- <script src="css/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css"> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <style type="text/css">
+          .style1
+          {
+              font-size: xx-large;
+          }
+      </style>
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav> -->
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container-fluid">
+        <div class="navbar-header">
+          <img src='./images/logo.png' id="logoSize" style="margin-top:4%;margin-left:4%;float:left;margin-bottom:4%;"/></a>
+
+        <ul class="nav navbar-nav">
+          <li class="active"><h3 style="margin-top: 30%;margin-left: 30%;width: 100%;">MQ -Race</h3></li>
+        </ul>
+        </div>
+			<!-- <ul class="nav">
+			  <li class="style1">
+			    <a href="#"><strong>MQ -Race&nbsp;&nbsp; Fast Fingers&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+             <span id="socketio"></span></a>
+			  </li>
+			</ul> -->
+	    </div>
+	  </div>
+	</div>
+
+    <div class="container-fluid">
+
+	<%- body %>
+
+  <nav className="navbar" id="footer" >
+       <div id = "ribbon" className="row footer-brand-colour">
+             <div className="fbc-elem fbc-pink col-xs-4 col-sm-4 col-md-4 col-lg-4"/>
+             <div className="fbc-elem fbc-yellow col-xs-4 col-sm-4 col-md-4 col-lg-4"/>
+             <div className="fbc-elem fbc-blue col-xs-4 col-sm-4 col-md-4 col-lg-4"/>
+         </div>
+            <p id="footerTextAllignment" >All Rights Reserved. &copy; Wipro Digital
+        </nav>
+	<script>
+	var user_id = Math.random();
+	var real_time_server = {host: '<%=real_time_server.host %>', port:<%=real_time_server.port %>};
+	</script>
+	<script src="http://<%=real_time_server.host %>:<%=real_time_server.port %>/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="/javascripts/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/knockout-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	</div>
+
+	<!-- <script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-300651-38']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script> -->
+  </body>
+</html>
